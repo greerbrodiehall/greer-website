@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Greer Brodie-Hall, Social Media Manager</title>
+<meta name="description" content="Greer Brodie-Hall is a social media manager and on-camera creator who turns scrollers into customers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@500;700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/*
+VOICE: warm, confident, specific. Big loud headlines, calm body copy.
+IDEA: a creator's camera roll pinned to a calm studio wall.
+PICTURE: tilted photo prints and phone frames playing her real videos.
+COLOUR and TYPE: warm cream, mist blue, soft black, a touch of lime; Rethink Sans Bold + Poppins.
+LAYOUT: each nav item is its own page with a color-block hero; work gets big frames.
+*/
+:root{
+  color-scheme:light;
+  --bg:#FBFAF5;--ink:#22282E;--teal:#3F6E80;--jas:#DCE7EC;--sand:#EAF1F4;--peach:#3F6E80;--lime:#DDE9A0;--limet:#F1F5DC;--mist:#DCE7EC;--sky:#EAF1F4;
+  --white:#fff;--line:rgba(31,35,40,.18);
+  --h:'Rethink Sans',system-ui,sans-serif;--b:'Poppins',system-ui,sans-serif;
+  --max:1200px;
+}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 var(--b);overflow-x:clip}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--h);font-weight:800;line-height:1.02;margin:0;text-wrap:balance;letter-spacing:-.02em}
+p{margin:0 0 1em}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 max(5vw,18px)}
+.band{padding:clamp(48px,7vw,104px) 0}
+
+/* top */
+.announce{background:var(--lime);color:var(--ink);text-align:center;font-size:14px;font-weight:500;padding:9px 16px}
+header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1.5px solid var(--ink)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}
+.logo{text-decoration:none;line-height:1.05}
+.logo b{display:block;font-family:var(--h);font-weight:800;font-size:22px;letter-spacing:-.01em}
+.logo span{font-size:13px;font-weight:600;color:var(--teal)}
+.links{display:flex;gap:4px;align-items:center}
+.links a{text-decoration:none;font-weight:500;font-size:15px;padding:10px 14px;border-radius:99px}
+.links a:hover{background:rgba(78,122,140,.14)}
+.links a.on{background:var(--ink);color:var(--bg)}
+.menu{display:none;background:none;border:1.5px solid var(--ink);border-radius:99px;font:600 15px var(--b);color:var(--ink);padding:9px 16px;cursor:pointer}
+
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:12px 24px;border-radius:99px;font:600 15px var(--b);text-decoration:none;border:2px solid var(--ink);cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.dark{background:transparent;color:var(--ink)}
+.btn.dark:hover{background:var(--mist)}
+.btn.peach{background:var(--lime);border-color:var(--ink);color:var(--ink)}
+.btn.peach:hover{background:#cfe07f}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+:focus-visible{outline:3px solid var(--peach);outline-offset:3px}
+
+/* page hero (each page) */
+.phero{padding:clamp(44px,7vw,96px) 0 clamp(36px,5vw,64px)}
+.phero .big{font-size:clamp(64px,14vw,184px);line-height:.88;letter-spacing:-.04em}
+.phero .row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-top:32px}
+.phero .tag{font-family:var(--h);font-weight:700;font-size:clamp(18px,2vw,24px);max-width:440px;text-align:right;line-height:1.25}
+.c-teal{background:var(--mist)}
+.c-jas{background:var(--jas)}
+.c-sand{background:var(--sand)}
+.c-peach{background:var(--limet)}
+.c-ink{background:var(--mist)}
+.c-lime{background:var(--limet)}
+.c-white{background:#fff}
+
+/* home hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(28px,5vw,72px);align-items:center;padding-block:clamp(40px,6vw,88px)}
+.role{display:inline-block;background:var(--lime);font-family:var(--h);font-weight:800;font-size:clamp(15px,1.6vw,18px);padding:6px 14px;border-radius:8px;margin-bottom:18px}
+.hero h1{font-size:clamp(52px,8.4vw,112px);line-height:.92;letter-spacing:-.04em}
+.hero h1 em{font-style:normal;color:var(--teal)}
+.hero .hook{font-family:var(--h);font-weight:700;font-size:clamp(22px,2.6vw,32px);line-height:1.15;margin:22px 0 14px;color:var(--teal)}
+.hero .intro{max-width:560px;font-size:17px}
+.print{background:#fff;padding:12px 12px 14px;box-shadow:0 18px 40px rgba(31,35,40,.22);transform:rotate(2.5deg);transition:transform .3s}
+.print:hover{transform:rotate(0)}
+.print img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.print figcaption{font-size:13px;font-weight:500;padding-top:10px;text-align:center}
+.print.l{transform:rotate(-2.5deg)}
+.hstats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:34px;padding-top:24px;border-top:1.5px solid var(--ink)}
+.hstats b{display:block;font-family:var(--h);font-weight:800;font-size:clamp(28px,3.4vw,40px);line-height:1;color:var(--peach)}
+.hstats span{font-size:14px;line-height:1.4;display:block;margin-top:6px}
+
+/* results */
+.results h2{font-size:clamp(32px,4.4vw,52px);margin-bottom:40px;max-width:760px}
+.rgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+.rgrid b{display:block;font-family:var(--h);font-weight:800;font-size:clamp(40px,5vw,64px);line-height:1;color:var(--teal)}
+.rgrid p{font-size:16px;margin:12px 0 6px;font-weight:500}
+.rgrid i{font-size:13px;opacity:.8}
+
+.brands{display:flex;flex-wrap:wrap;gap:12px 40px;align-items:center;justify-content:center;padding-block:28px}
+.brands span{font-family:var(--h);font-weight:800;font-size:clamp(18px,2vw,24px);white-space:nowrap}
+.brands small{flex-basis:100%;text-align:center;font-weight:600;font-size:14px;opacity:.9}
+
+/* cards */
+.sec-h{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:32px}
+.sec-h h2{font-size:clamp(36px,5.2vw,68px)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.card{display:flex;flex-direction:column;text-decoration:none;border-radius:22px;overflow:hidden;border:2px solid var(--ink);transition:transform .2s,box-shadow .2s;background:#fff}
+.card:hover{transform:translateY(-4px);box-shadow:8px 8px 0 var(--ink)}
+.card .thumb{aspect-ratio:4/5;overflow:hidden;position:relative}
+.card .thumb img{width:100%;height:100%;object-fit:cover}
+.card .body{padding:20px 22px 24px;flex:1;display:flex;flex-direction:column}
+.card small{font-weight:600;font-size:13px;color:var(--teal)}
+.card h3{font-size:24px;margin:6px 0 10px}
+.card p{font-size:15px;margin:0 0 16px}
+.card .go{margin-top:auto;font-weight:600;font-size:15px}
+.card .go::after{content:" →"}
+
+/* case study */
+.cs-hero .kick{font-weight:600;font-size:15px;margin-bottom:14px;display:block}
+.cs-hero h1{font-size:clamp(40px,6.4vw,84px);max-width:1000px;letter-spacing:-.03em}
+.cs-hero .meta{margin-top:20px;font-weight:500}
+.cs{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,6vw,88px);align-items:start}
+.cs .summary{font-size:18px;max-width:600px}
+.rlist{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:0}
+.rlist li{display:grid;grid-template-columns:minmax(190px,.5fr) minmax(0,1fr);gap:24px;padding:20px 0;border-top:1.5px solid var(--ink);align-items:baseline}
+.rlist b{font-family:var(--h);font-weight:800;font-size:clamp(30px,3.6vw,44px);line-height:1;color:var(--peach)}
+.note{background:#fff;border-left:6px solid var(--lime);padding:18px 22px;border-radius:0 14px 14px 0;margin-top:28px}
+
+.phone{margin:0;justify-self:center;width:min(100%,330px)}
+.phone .frame{background:var(--ink);border-radius:38px;padding:10px;box-shadow:0 24px 50px rgba(31,35,40,.28)}
+.phone video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:29px;background:#15181c}
+.phone figcaption{font-size:14px;font-weight:500;line-height:1.45;margin-top:14px;text-align:center}
+.reel{display:grid;grid-template-columns:repeat(var(--n,4),minmax(0,1fr));gap:24px}
+.reel .phone{width:100%}
+.reel .phone .frame{border-radius:28px;padding:7px}
+.reel .phone video{border-radius:22px}
+.pager{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1.5px solid var(--ink);padding-top:24px}
+.pager a{text-decoration:none;font-weight:600}
+
+.statics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.static img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;border:2px solid var(--ink)}
+.static h3{font-size:19px;margin:14px 0 6px}
+.static b{display:block;color:var(--peach);font-family:var(--h);font-weight:800;font-size:16px;line-height:1.3;margin-bottom:4px}
+.static p{font-size:14px}
+
+/* services */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.chips span{background:#fff;border:1.5px solid var(--ink);border-radius:99px;padding:8px 16px;font-weight:500;font-size:15px}
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch}
+.tier{background:#fff;border:2px solid var(--ink);border-radius:24px;padding:28px 26px;display:flex;flex-direction:column;position:relative}
+.tier.f{background:var(--sky);border:3px solid var(--teal);transform:translateY(-12px)}
+.tier .badge{position:absolute;top:-15px;left:24px;background:var(--lime);color:var(--ink);font-weight:600;font-size:13px;padding:5px 14px;border-radius:99px}
+.tier h3{font-size:28px}
+.tier .price{font-family:var(--h);font-weight:800;font-size:clamp(40px,4.6vw,54px);line-height:1;margin:16px 0 4px;white-space:nowrap}
+.tier .price small{font-family:var(--b);font-weight:500;font-size:15px}
+.tier .start{font-size:13px;font-weight:500;opacity:.8}
+.tier .for{margin:14px 0 18px;font-size:15px}
+.tier ul{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:9px;font-size:15px}
+.tier li{padding-left:28px;position:relative;line-height:1.45}
+.tier li::before{content:"";position:absolute;left:0;top:3px;width:18px;height:18px;border-radius:50%;background:var(--teal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E") center/14px no-repeat}
+.tier.f li::before{background-color:var(--teal)}
+.tier .btn{margin-top:auto;justify-content:center}
+.tier.f .btn{background:var(--lime);border-color:var(--ink);color:var(--ink)}
+.addons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.addon{border:1.5px solid var(--ink);border-radius:16px;padding:18px 20px;background:#fff}
+.addon b{display:block;font-family:var(--h);font-weight:800;font-size:26px;color:var(--peach)}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.step{border-top:4px solid var(--ink);padding-top:18px}
+.step h3{font-size:24px;margin-bottom:8px}
+.why h2{font-size:clamp(34px,4.6vw,58px);max-width:900px;margin-bottom:36px}
+.whys{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.whyc{background:#fff;border:1.5px solid var(--ink);border-radius:20px;padding:24px}
+.whyc h3{font-size:22px;margin-bottom:8px}
+.whyc p{font-size:15px;margin:0}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,88px);align-items:start}
+.about p{font-size:17px}
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.gallery .print:nth-child(even){transform:rotate(-2deg)}
+
+/* contact */
+.contact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.box{border:2px solid var(--ink);border-radius:24px;padding:32px;background:#fff;display:flex;flex-direction:column;gap:6px}
+.box h2{font-size:clamp(28px,3.4vw,40px);margin-bottom:8px}
+.box .btns{margin-top:auto;padding-top:14px}
+.mail{font-weight:600;font-size:17px;word-break:break-all}
+.socials{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:28px;font-weight:600}
+
+/* cta + footer */
+.cta{text-align:center}
+.cta h2{font-size:clamp(40px,7vw,96px);letter-spacing:-.035em;margin-bottom:18px}
+.cta p{font-size:18px;max-width:620px;margin:0 auto 28px}
+.cta .btns{justify-content:center}
+footer{background:var(--sky);color:var(--ink);border-top:1.5px solid var(--ink);padding:48px 0 36px;font-size:15px}
+.foot{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.foot nav{display:flex;flex-wrap:wrap;gap:6px 22px}
+.foot a{text-decoration:none}
+.foot a:hover{text-decoration:underline}
+.foot small{display:block;margin-top:28px;opacity:.7}
+.loading{padding:120px 20px;text-align:center}
+.view{animation:in .35s ease}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+@media (max-width:1000px){
+  .rgrid,.statics,.addons,.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .reel{--n:2!important}
+  .whys{grid-template-columns:minmax(0,1fr)}
+  .tiers{grid-template-columns:minmax(0,1fr);max-width:520px;margin:0 auto}
+  .tier.f{transform:none}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:820px){
+  .menu{display:inline-block}
+  .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--bg);border-bottom:1.5px solid var(--ink);padding:10px max(5vw,18px) 18px}
+  .links.open{display:flex}
+  .links a{padding:14px 16px}
+  .hero,.cs,.about,.contact{grid-template-columns:minmax(0,1fr)}
+  .hero .print{max-width:340px;margin:0 auto}
+  .phero .tag{text-align:left}
+}
+@media (max-width:560px){
+  .cards,.steps{grid-template-columns:minmax(0,1fr)}
+  .hstats{grid-template-columns:minmax(0,1fr);gap:14px}
+  .rlist li{grid-template-columns:minmax(0,1fr);gap:6px}
+  .reel{gap:14px}
+  .box{padding:24px}
+}
+</style>
+</head>
+<body>
+<div class="announce" id="announce"></div>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#home" id="logo"><b>Greer Brodie-Hall</b><span>Social Media Manager</span></a>
+    <button class="menu" id="menu" aria-expanded="false" aria-controls="links">Menu</button>
+    <nav class="links" id="links">
+      <a href="#home" data-p="home">Home</a>
+      <a href="#work" data-p="work">Work</a>
+      <a href="#services" data-p="services">Services</a>
+      <a href="#about" data-p="about">About</a>
+      <a href="#contact" data-p="contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<main id="app"><div class="loading">Loading…</div></main>
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><b style="font-family:var(--h);font-size:22px">Greer Brodie-Hall</b><br>Social Media Manager</div>
+      <nav>
+        <a href="#home">Home</a><a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a>
+      </nav>
+      <div id="footsoc"></div>
+    </div>
+    <small id="copy"></small>
+  </div>
+</footer>
+<script>
+{
+const app=document.getElementById('app');
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let C=null;
+const colorClass={verdigris:'c-teal',jasmine:'c-jas',sandy:'c-sand',peach:'c-peach'};
+
+const phone=(v,cls='')=>`<figure class="phone ${cls}"><div class="frame"><video controls playsinline preload="none" poster="${esc(v.poster)}" src="${esc(v.src)}"></video></div>${v.caption?`<figcaption>${esc(v.caption)}</figcaption>`:''}</figure>`;
+const rowFit=l=>l.length>4?l.slice(0,Math.floor(l.length/4)*4):l;
+const reel=l=>{const v=rowFit(l);return `<div class="reel" style="--n:${Math.min(4,v.length)}">${v.map(x=>phone(x)).join('')}</div>`};
+const pageHero=(word,tag,cls)=>`<section class="phero ${cls}"><div class="wrap"><h1 class="big">${esc(word)}</h1><div class="row"><a class="btn dark" href="#contact">Work with me</a><p class="tag">${esc(tag)}</p></div></div></section>`;
+const cta=(cls='c-lime')=>`<section class="band cta ${cls}"><div class="wrap"><h2>${esc(C.contact.headline)}</h2><p>${esc(C.contact.intro)}</p><div class="btns"><a class="btn peach" href="#contact">Work with me</a><a class="btn ghost" href="#services">See services</a></div></div></section>`;
+const card=s=>`<a class="card" href="#${esc(s.id)}"><div class="thumb ${colorClass[s.color]||''}"><img src="${esc(s.video.poster)}" alt="" loading="lazy"></div><div class="body"><small>${esc(s.brand)}</small><h3>${esc(s.headline)}</h3><p>${esc(s.card)}</p><span class="go">See the case study</span></div></a>`;
+
+const views={
+home(){
+  const h=C.home;
+  const feat=h.featured.map(id=>C.caseStudies.find(s=>s.id===id)).filter(Boolean);
+  return `
+  <section class="wrap hero">
+    <div>
+      <span class="role">${esc(C.site.name)} · ${esc(C.site.title)}</span>
+      <h1>Social media <em>manager.</em></h1>
+      <p class="hook">${esc(h.headline)}</p>
+      <p class="intro">${esc(h.intro)}</p>
+      <div class="btns"><a class="btn peach" href="#contact">Hire me</a><a class="btn dark" href="#work">See my work</a><a class="btn ghost" href="${esc(C.site.linkedin)}" target="_blank" rel="noopener">Resume / LinkedIn</a></div>
+      <div class="hstats">${h.heroStats.map(s=>`<div><b>${esc(s.number)}</b><span>${esc(s.label)}</span></div>`).join('')}</div>
+    </div>
+    <figure class="print" style="margin:0"><img src="${esc(h.photo)}" alt="Greer filming at Cabot's Ice Cream"><figcaption>${esc(h.photoCaption)}</figcaption></figure>
+  </section>
+  <section class="band results c-sand"><div class="wrap">
+    <h2>${esc(h.resultsTitle)}</h2>
+    <div class="rgrid">${h.results.map(r=>`<div><b>${esc(r.number)}</b><p>${esc(r.label)}</p><i>${esc(r.source)}</i></div>`).join('')}</div>
+  </div></section>
+  <section class="c-teal"><div class="wrap brands"><small>${esc(h.brandsTitle)}</small>${h.brands.map(b=>`<span>${esc(b)}</span>`).join('')}</div></section>
+  <section class="band"><div class="wrap">
+    <div class="sec-h"><h2>${esc(h.featuredTitle)}</h2><a class="btn dark" href="#work">All work</a></div>
+    <div class="cards">${feat.map(card).join('')}</div>
+  </div></section>
+  <section class="band c-jas"><div class="wrap">
+    <div class="sec-h" style="margin:0"><div><h2>Services</h2><p style="font-size:18px;max-width:620px;margin-top:14px">${esc(h.servicesTeaser)}</p></div><a class="btn dark" href="#services">See packages</a></div>
+  </div></section>
+  ${cta()}`;
+},
+work(){
+  const st=C.statics, bv=C.brandVideos;
+  return `${pageHero('Work','Results that speak for themselves. Tap any project to see the full story.','c-jas')}
+  <section class="band"><div class="wrap">
+    <div class="sec-h"><h2>Case studies</h2></div>
+    <div class="cards">${C.caseStudies.map(card).join('')}</div>
+  </div></section>
+  <section class="band c-white"><div class="wrap">
+    <div class="sec-h"><div><h2>${esc(st.title)}</h2><p style="margin-top:12px">${esc(st.intro)}</p></div></div>
+    <div class="statics">${st.items.map(i=>`<div class="static"><img src="${esc(i.img)}" alt="${esc(i.title)}" loading="lazy"><h3>${esc(i.title)}</h3><b>${esc(i.result)}</b><p>${esc(i.text)}</p></div>`).join('')}</div>
+  </div></section>
+  <section class="band"><div class="wrap">
+    <div class="sec-h"><div><h2>${esc(bv.title)}</h2><p style="margin-top:12px">${esc(bv.intro)}</p></div></div>
+    ${reel(bv.items)}
+  </div></section>
+  ${cta()}`;
+},
+caseStudy(s){
+  const i=C.caseStudies.indexOf(s), prev=C.caseStudies[(i-1+C.caseStudies.length)%C.caseStudies.length], next=C.caseStudies[(i+1)%C.caseStudies.length];
+  return `<section class="phero cs-hero ${colorClass[s.color]||'c-jas'}"><div class="wrap">
+    <span class="kick">${esc(s.kicker)}</span><h1>${esc(s.headline)}</h1><p class="meta">${esc(s.role)}</p>
+  </div></section>
+  <section class="band"><div class="wrap cs">
+    <div>
+      <p class="summary">${esc(s.summary)}</p>
+      <ol class="rlist">${s.results.map(r=>`<li><b>${esc(r.number)}</b><span>${esc(r.text)}</span></li>`).join('')}</ol>
+      ${s.extraNote?`<div class="note">${esc(s.extraNote)}${s.extraLink?` <a href="${esc(s.extraLink.url)}" target="_blank" rel="noopener"><b>${esc(s.extraLink.label)}</b></a>`:''}</div>`:''}
+      <div class="btns" style="margin-top:28px"><a class="btn peach" href="#contact">Get results like this</a><a class="btn ghost" href="#work">Back to all work</a></div>
+    </div>
+    ${phone(s.video)}
+  </div></section>
+  ${s.more&&s.more.length?`<section class="band c-white"><div class="wrap"><div class="sec-h"><h2>${esc(s.extraTitle||'More videos')}</h2></div>${reel(s.more)}</div></section>`:''}
+  <section class="band" style="padding-top:40px"><div class="wrap pager"><a href="#${esc(prev.id)}">← ${esc(prev.brand)}</a><a href="#${esc(next.id)}">${esc(next.brand)} →</a></div></section>
+  ${cta()}`;
+},
+services(){
+  const s=C.services;
+  return `${pageHero('Services',s.intro,'c-lime')}
+  <section class="band"><div class="wrap">
+    <div class="sec-h" style="display:block"><h2>${esc(s.headline)}</h2><p style="margin-top:14px;font-size:18px">Every package includes:</p><div class="chips">${s.allInclude.map(x=>`<span>${esc(x)}</span>`).join('')}</div></div>
+    <div class="tiers" style="margin-top:48px">${s.tiers.map(t=>`<div class="tier ${t.featured?'f':''}">${t.badge?`<span class="badge">${esc(t.badge)}</span>`:''}
+      <h3>${esc(t.name)}</h3><span class="start">Starting at</span><div class="price">${esc(t.price)}<small>${esc(t.per)}</small></div>
+      <p class="for">${esc(t.for)}</p><ul>${t.items.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+      <a class="btn dark" href="#contact">Get started</a></div>`).join('')}</div>
+    <p style="margin-top:28px;text-align:center">${esc(s.pricesNote)}</p>
+  </div></section>
+  <section class="band c-white"><div class="wrap">
+    <div class="sec-h"><h2>${esc(s.addonsTitle)}</h2></div>
+    <div class="addons">${s.addons.map(a=>`<div class="addon"><b>${esc(a.price)}</b>${esc(a.name)}</div>`).join('')}</div>
+    <p style="margin-top:20px">${esc(s.communityNote)}</p>
+  </div></section>
+  <section class="band"><div class="wrap">
+    <div class="sec-h"><h2>${esc(s.stepsTitle)}</h2></div>
+    <div class="steps">${s.steps.map(x=>`<div class="step"><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p></div>`).join('')}</div>
+  </div></section>
+  <section class="band c-teal why"><div class="wrap"><h2>${esc(s.why.headline)}</h2><div class="whys">${s.why.points.map(p=>`<div class="whyc"><h3>${esc(p.title)}</h3><p>${esc(p.text)}</p></div>`).join('')}</div></div></section>
+  ${cta()}`;
+},
+about(){
+  const a=C.about;
+  return `${pageHero('About','Social media manager, on-camera creator and the person happy to do take twelve.','c-sand')}
+  <section class="band"><div class="wrap about">
+    <figure class="print l" style="margin:0"><img src="${esc(a.photo)}" alt="Greer Brodie-Hall"></figure>
+    <div><h2 style="font-size:clamp(36px,5vw,64px);margin-bottom:24px">${esc(a.headline)}</h2>${a.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('')}
+      <div class="hstats">${a.stats.map(s=>`<div><b>${esc(s.number)}</b><span>${esc(s.label)}</span></div>`).join('')}</div>
+      <div class="btns" style="margin-top:28px"><a class="btn peach" href="#contact">Work with me</a><a class="btn dark" href="#work">See my work</a></div>
+    </div>
+  </div></section>
+  <section class="band c-jas"><div class="wrap"><div class="gallery">${a.gallery.map(g=>`<figure class="print" style="margin:0"><img src="${esc(g.img)}" alt="${esc(g.alt)}" loading="lazy"></figure>`).join('')}</div></div></section>
+  ${cta()}`;
+},
+contact(){
+  const c=C.contact,s=C.site;
+  return `${pageHero('Contact',c.intro,'c-teal')}
+  <section class="band"><div class="wrap">
+    <div class="contact">
+      <div class="box"><h2>${esc(c.business.title)}</h2><p>${esc(c.business.text)}</p><p class="mail">${esc(s.email)}</p>
+        <div class="btns"><a class="btn peach" href="mailto:${esc(s.email)}">${esc(c.business.button)}</a><button class="btn ghost" id="copymail" type="button">Copy email</button></div></div>
+      <div class="box"><h2>${esc(c.hiring.title)}</h2><p>${esc(c.hiring.text)}</p>
+        <div class="btns"><a class="btn dark" href="${esc(s.linkedin)}" target="_blank" rel="noopener">${esc(c.hiring.button)}</a><a class="btn ghost" href="#work">See my work</a></div></div>
+    </div>
+    <div class="socials"><a href="${esc(s.instagram)}" target="_blank" rel="noopener">Instagram ${esc(s.instagramHandle)}</a><a href="${esc(s.tiktok)}" target="_blank" rel="noopener">TikTok ${esc(s.tiktokHandle)}</a><a href="${esc(s.linkedin)}" target="_blank" rel="noopener">LinkedIn</a></div>
+  </div></section>
+  <section class="band c-jas"><div class="wrap" style="max-width:520px"><figure class="print" style="margin:0"><img src="${esc(c.photo)}" alt="Greer at dinner" loading="lazy"></figure></div></section>`;
+}
+};
+
+const links=document.getElementById('links'),menu=document.getElementById('menu');
+menu.addEventListener('click',()=>{const o=links.classList.toggle('open');menu.setAttribute('aria-expanded',o)});
+
+function route(){
+  if(!C)return;
+  const id=(location.hash||'#home').slice(1)||'home';
+  const cs=C.caseStudies.find(s=>s.id===id);
+  const html=cs?views.caseStudy(cs):(views[id]||views.home)();
+  app.innerHTML=`<div class="view">${html}</div>`;
+  const active=cs?'work':(views[id]?id:'home');
+  document.querySelectorAll('#links a').forEach(a=>a.classList.toggle('on',a.dataset.p===active));
+  links.classList.remove('open');menu.setAttribute('aria-expanded','false');
+  document.title=(cs?cs.brand+' | ':active!=='home'?active[0].toUpperCase()+active.slice(1)+' | ':'')+C.site.name+', '+C.site.title;
+  window.scrollTo(0,0);
+  const cm=document.getElementById('copymail');
+  if(cm)cm.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(C.site.email);cm.textContent='Copied'}catch(e){cm.textContent=C.site.email}});
+  // only one video plays at a time
+  app.querySelectorAll('video').forEach(v=>v.addEventListener('play',()=>app.querySelectorAll('video').forEach(o=>{if(o!==v)o.pause()})));
+}
+window.addEventListener('hashchange',route);
+
+fetch('content.json').then(r=>r.json()).then(data=>{
+  C=data;
+  document.getElementById('announce').textContent=C.site.announcement;
+  document.getElementById('footsoc').innerHTML=`<a href="mailto:${esc(C.site.email)}">${esc(C.site.email)}</a><br><a href="${esc(C.site.instagram)}" target="_blank" rel="noopener">Instagram</a> · <a href="${esc(C.site.tiktok)}" target="_blank" rel="noopener">TikTok</a> · <a href="${esc(C.site.linkedin)}" target="_blank" rel="noopener">LinkedIn</a>`;
+  document.getElementById('copy').textContent='© '+new Date().getFullYear()+' '+C.site.name+'.';
+  route();
+}).catch(()=>{app.innerHTML='<div class="loading">Sorry, the page could not load. Please refresh.</div>'});
+}
+</script>
+</body>
+</html>

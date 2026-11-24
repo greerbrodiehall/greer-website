@@ -1,0 +1,562 @@
+{
+  "site": {
+    "name": "Greer Brodie-Hall",
+    "title": "Social Media Manager",
+    "announcement": "Now booking new clients for 2027.",
+    "email": "greerbrodiehall@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/greer-brodie-hall-56a03b134/",
+    "instagram": "https://www.instagram.com/greerbrodiehall/",
+    "instagramHandle": "@greerbrodiehall",
+    "tiktok": "https://www.tiktok.com/@reservationforgreer",
+    "tiktokHandle": "@reservationforgreer"
+  },
+  "home": {
+    "eyebrow": "Social media manager and on-camera creator",
+    "headline": "I turn scrollers into customers.",
+    "intro": "Short-form video and social strategy that gets people to book the trip, walk in the door and buy the thing they saw online. From $5,000 tours to neighborhood favorites.",
+    "photo": "media/greer-filming.jpg",
+    "photoCaption": "On a shoot day at Cabot's",
+    "heroStats": [
+      {
+        "number": "200M+",
+        "label": "views across brands I've managed"
+      },
+      {
+        "number": "+10%",
+        "label": "sales at Cabot's Ice Cream, Jun to Oct 2026"
+      },
+      {
+        "number": "1 in 4",
+        "label": "EF Go Ahead organic social leads started with my content"
+      }
+    ],
+    "resultsTitle": "Social that drives traffic, leads and sales",
+    "results": [
+      {
+        "number": "+8,352%",
+        "label": "website visits in one month from one video",
+        "source": "Switzerland by Train, EF Go Ahead Tours"
+      },
+      {
+        "number": "55K+",
+        "label": "website visits from my videos",
+        "source": "EF Go Ahead Tours, since June 2024"
+      },
+      {
+        "number": "4.5%",
+        "label": "visit-to-lead rate on my videos (social average is 1% to 3%)",
+        "source": "EF Go Ahead Tours, GA4"
+      },
+      {
+        "number": "143K",
+        "label": "new followers in 5 months",
+        "source": "Cabot's Ice Cream, 3 platforms"
+      }
+    ],
+    "brandsTitle": "Brands I've made content for",
+    "brands": [
+      "EF Go Ahead Tours",
+      "Cabot's Ice Cream",
+      "Johnny's Luncheonette",
+      "Harpoon Brewery",
+      "Table Mercato"
+    ],
+    "featuredTitle": "Recent work",
+    "featured": [
+      "cabots",
+      "go-ahead",
+      "johnnys"
+    ],
+    "servicesTeaser": "Monthly social media management for hotels, tours and experiences, restaurants and cafes, shops, wellness and service businesses."
+  },
+  "caseStudies": [
+    {
+      "id": "go-ahead",
+      "brand": "EF Go Ahead Tours",
+      "role": "Associate Social Media Manager, June 2024 to present",
+      "kicker": "Case study: EF Go Ahead Tours",
+      "headline": "Face-to-camera videos that rank next to the homepage",
+      "card": "My videos are 12 of the top 30 organic social traffic sources to goaheadtours.com.",
+      "color": "verdigris",
+      "summary": "EF Go Ahead sells guided tours that start around $5,000, to travelers 45 and up. I made face-to-camera videos with specific, useful lists, and they started ranking alongside the homepage and link in bio as sources of website traffic.",
+      "results": [
+        {
+          "number": "12 of 30",
+          "text": "top organic social traffic sources to goaheadtours.com are my videos, out of 6,500+ sources"
+        },
+        {
+          "number": "23.1%",
+          "text": "of organic social leads (about 1 in 4) and 12.6% of bookings (1 in 8) started with my content"
+        },
+        {
+          "number": "+897%",
+          "text": "organic video views on the account I helped grow, 13.0M to 129.7M (account-wide, small team)"
+        }
+      ],
+      "video": {
+        "src": "media/ef-usa.mp4",
+        "poster": "media/ef-usa.jpg",
+        "caption": "5 places most people miss in the USA: #8 traffic source of 6,500+, 720K views, 7.7% visit-to-lead rate"
+      },
+      "extraTitle": "More from EF Go Ahead Tours",
+      "extraNote": "Also: one Switzerland by Train itinerary video drove +8,352% website visits in a month and helped make the case for new train tours. My top Reel, Tokyo matcha, reached 22.2M views.",
+      "extraLink": {
+        "label": "Watch Switzerland by Train",
+        "url": "https://www.facebook.com/reel/1918107619144052"
+      },
+      "more": [
+        {
+          "src": "media/ef-italy.mp4",
+          "poster": "media/ef-italy.jpg",
+          "caption": "5 hidden gems in Italy: #4 organic social traffic source of the year, 1.1M views"
+        },
+        {
+          "src": "media/ef-florence.mp4",
+          "poster": "media/ef-florence.jpg",
+          "caption": "Testing viral Florence spots"
+        },
+        {
+          "src": "media/ef-girlstrip.mp4",
+          "poster": "media/ef-girlstrip.jpg",
+          "caption": "Top places for your next girls trip"
+        },
+        {
+          "src": "media/ef-italy7.mp4",
+          "poster": "media/ef-italy7.jpg",
+          "caption": "7 hidden gems in Italy"
+        },
+        {
+          "src": "media/ef-bucketlist.mp4",
+          "poster": "media/ef-bucketlist.jpg",
+          "caption": "Bucket list spots from a two-week tour"
+        },
+        {
+          "src": "media/ef-inflight.mp4",
+          "poster": "media/ef-inflight.jpg",
+          "caption": "In-flight essentials"
+        },
+        {
+          "src": "media/ef-egypt.mp4",
+          "poster": "media/ef-egypt.jpg",
+          "caption": "Black Friday: Egypt"
+        },
+        {
+          "src": "media/ef-iceland.mp4",
+          "poster": "media/ef-iceland.jpg",
+          "caption": "Black Friday: Iceland"
+        }
+      ]
+    },
+    {
+      "id": "cabots",
+      "brand": "Cabot's Ice Cream",
+      "role": "Freelance social media manager, June 2026 to present",
+      "kicker": "Case study: Cabot's Ice Cream",
+      "headline": "From local favorite to a sundae people order by name",
+      "card": "Helped drive a 10% sales lift and 143K new followers in five months.",
+      "color": "jasmine",
+      "summary": "Cabot's is a family ice cream shop outside Boston with a loyal local crowd, a small social following and no TikTok. I cast the real staff, opened every video with a question and built each one around an over-the-top sundae, then launched TikTok from zero.",
+      "results": [
+        {
+          "number": "+10%",
+          "text": "sales, June to October 2026 vs. the same months in 2025, with about 7% more guests"
+        },
+        {
+          "number": "0 to 58.4K",
+          "text": "TikTok followers, and about 143K new followers across Instagram, Facebook and TikTok"
+        },
+        {
+          "number": "14.8M",
+          "text": "views and 185K+ shares on the Chocolate Homicide Reel. Customers now order it by name"
+        }
+      ],
+      "video": {
+        "src": "media/cabots-chocolate.mp4",
+        "poster": "media/cabots-chocolate.jpg",
+        "caption": "\"What's the best sundae for chocolate lovers?\" 14.8M views across platforms"
+      },
+      "extraTitle": "More from Cabot's",
+      "extraNote": "Instagram views up 5,200% to 39.5M since June 2026. A second Reel reached 11.0M views.",
+      "more": [
+        {
+          "src": "media/cabots-1.mp4",
+          "poster": "media/cabots-1.jpg",
+          "caption": "What's the most popular sundae on the menu?"
+        },
+        {
+          "src": "media/cabots-2.mp4",
+          "poster": "media/cabots-2.jpg",
+          "caption": "What's the messiest sundae?"
+        },
+        {
+          "src": "media/cabots-4.mp4",
+          "poster": "media/cabots-4.jpg",
+          "caption": "What should a frappe lover order?"
+        },
+        {
+          "src": "media/cabots-5.mp4",
+          "poster": "media/cabots-5.jpg",
+          "caption": "Sundae Roulette, Day 1"
+        }
+      ]
+    },
+    {
+      "id": "johnnys",
+      "brand": "Johnny's Luncheonette",
+      "role": "Freelance social media manager, November 2025 to present",
+      "kicker": "Case study: Johnny's Luncheonette",
+      "headline": "One pancake Reel, more shares than every other post combined",
+      "card": "Instagram views up 4,300% on an account under 2,000 followers.",
+      "color": "peach",
+      "summary": "Johnny's is a classic diner with great food and a small, quiet Instagram. I leaned on the regulars, the staff and shareable prompts that give people a reason to send a post to a friend.",
+      "results": [
+        {
+          "number": "+4,300%",
+          "text": "Instagram views year over year, to 1.3M"
+        },
+        {
+          "number": "34.7K",
+          "text": "shares and 669K views on \"Send this to the person who owes you pancakes\""
+        },
+        {
+          "number": "9x",
+          "text": "higher monthly Instagram views in the months after, compared with before"
+        }
+      ],
+      "video": {
+        "src": "media/johnnys-pancakes.mp4",
+        "poster": "media/johnnys-pancakes.jpg",
+        "caption": "Send this to the person who owes you pancakes: 669K views, 34.7K shares"
+      },
+      "extraTitle": "More from Johnny's",
+      "extraNote": "",
+      "more": [
+        {
+          "src": "media/johnnys-2.mp4",
+          "poster": "media/johnnys-2.jpg",
+          "caption": "Ask a regular: what's the best order after 31 years?"
+        },
+        {
+          "src": "media/johnnys-sandwich.mp4",
+          "poster": "media/johnnys-sandwich.jpg",
+          "caption": "Small business shoutout"
+        },
+        {
+          "src": "media/johnnys-1.mp4",
+          "poster": "media/johnnys-1.jpg",
+          "caption": "Meet Johnny's"
+        },
+        {
+          "src": "media/johnnys-4.mp4",
+          "poster": "media/johnnys-4.jpg",
+          "caption": "Fresh off the griddle"
+        }
+      ]
+    },
+    {
+      "id": "harpoon",
+      "brand": "Harpoon Brewery",
+      "role": "Senior Digital Marketing Specialist, 2022 to 2024",
+      "kicker": "Case study: Harpoon Brewery",
+      "headline": "Launching a brewery on TikTok with the people who make the beer",
+      "card": "Launched Harpoon's TikTok: 7M+ views in year one, no paid support.",
+      "color": "jasmine",
+      "summary": "Harpoon had no TikTok. I launched it with coworkers as the cast and New England humor as the hook, and grew three brands' social at the same time.",
+      "results": [
+        {
+          "number": "7M+",
+          "text": "TikTok views in the first year, with no paid support"
+        },
+        {
+          "number": "50%+",
+          "text": "year-over-year growth in impressions and engagements for 3 brands"
+        }
+      ],
+      "video": {
+        "src": "media/harpoon-newengland.mp4",
+        "poster": "media/harpoon-newengland.jpg",
+        "caption": "New England things that would send West Coast people into a coma"
+      },
+      "extraTitle": "More from Harpoon",
+      "extraNote": "",
+      "more": [
+        {
+          "src": "media/harpoon-coworkers.mp4",
+          "poster": "media/harpoon-coworkers.jpg",
+          "caption": "Coworkers with side parts vs. middle parts"
+        },
+        {
+          "src": "media/harpoon-pumpkin.mp4",
+          "poster": "media/harpoon-pumpkin.jpg",
+          "caption": "When I finally get my pumpkin beer"
+        },
+        {
+          "src": "media/harpoon-brewery.mp4",
+          "poster": "media/harpoon-brewery.jpg",
+          "caption": "Behind the scenes at the brewery"
+        }
+      ]
+    },
+    {
+      "id": "table-mercato",
+      "brand": "Table Mercato",
+      "role": "On my own page, unpaid",
+      "kicker": "On my own page: Table Mercato",
+      "headline": "One honest sandwich review, double the bread sales",
+      "card": "A post on my own page doubled a North End shop's bread sales in two weeks.",
+      "color": "verdigris",
+      "summary": "This wasn't client work. I posted an honest review of a North End sandwich shop on my own page in my free time, and it showed what one specific, genuine recommendation can do for a small business.",
+      "results": [
+        {
+          "number": "+100%",
+          "text": "bread sales in the two weeks after the post"
+        },
+        {
+          "number": "563K",
+          "text": "views on the review"
+        },
+        {
+          "number": "More",
+          "text": "influencers visited afterward. The shop was later named Boston's Best Sandwich 2025 by Boston Magazine"
+        }
+      ],
+      "video": {
+        "src": "media/tablemercato.mp4",
+        "poster": "media/tablemercato.jpg",
+        "caption": "The Table Mercato review"
+      },
+      "extraTitle": "",
+      "extraNote": "",
+      "more": []
+    }
+  ],
+  "statics": {
+    "title": "Carousels and statics",
+    "intro": "Range beyond video, all for EF Go Ahead Tours.",
+    "items": [
+      {
+        "img": "media/static-vitaminc.jpg",
+        "title": "I need some vitamin C",
+        "result": "1.99M views, 79.2K likes, 2.7K shares",
+        "text": "Static meme selling the Italy dream"
+      },
+      {
+        "img": "media/static-florence.jpg",
+        "title": "7 things you'll regret not doing in Florence",
+        "result": "135K views, 800+ comments asking for the tour list",
+        "text": "Carousel with a comment-for-DM lead prompt"
+      },
+      {
+        "img": "media/static-math.jpg",
+        "title": "Are you good at math?",
+        "result": "451K views, 11.4K likes, 554 shares",
+        "text": "Humor static for Italy tours"
+      },
+      {
+        "img": "media/static-zodiac.jpg",
+        "title": "Your zodiac sign, your city abroad",
+        "result": "317K views, 14.7K likes, 266 shares",
+        "text": "Zodiac-hook carousel selling week-long tours"
+      }
+    ]
+  },
+  "brandVideos": {
+    "title": "Brand and lifestyle videos",
+    "intro": "On-camera content for brands, filmed, scripted and edited by me.",
+    "items": [
+      {
+        "src": "media/ugc-ryze.mp4",
+        "poster": "media/ugc-ryze.jpg",
+        "caption": "RYZE"
+      },
+      {
+        "src": "media/ugc-ourplace.mp4",
+        "poster": "media/ugc-ourplace.jpg",
+        "caption": "Our Place Always Pan"
+      },
+      {
+        "src": "media/nice-hotel.mp4",
+        "poster": "media/nice-hotel.jpg",
+        "caption": "Hotel in Nice, France"
+      },
+      {
+        "src": "media/fun-drink.mp4",
+        "poster": "media/fun-drink.jpg",
+        "caption": "Halfday Ad"
+      }
+    ]
+  },
+  "services": {
+    "headline": "Social media management",
+    "intro": "For hotels, tours and experiences, restaurants and cafes, shops, wellness and service businesses that want social to bring in customers, not just likes.",
+    "allInclude": [
+      "Social strategy",
+      "Industry and competitor research",
+      "Hooks, scripts and captions",
+      "One shoot day a month, on location"
+    ],
+    "tiers": [
+      {
+        "name": "Content",
+        "price": "$1,000",
+        "per": "/month",
+        "for": "You post it yourself. I plan it, film it and edit it.",
+        "featured": false,
+        "items": [
+          "Strategy and industry research",
+          "1 shoot day",
+          "6 short-form videos",
+          "2 carousels or statics",
+          "Hooks, scripts and captions"
+        ]
+      },
+      {
+        "name": "Managed Social",
+        "price": "$2,200",
+        "per": "/month",
+        "for": "Social fully off your plate.",
+        "featured": true,
+        "badge": "Most popular",
+        "items": [
+          "Strategy and industry research",
+          "1 shoot day",
+          "8 short-form videos",
+          "4 carousels or statics",
+          "Posting on Instagram, Facebook and TikTok",
+          "Monthly content calendar",
+          "Monthly performance report",
+          "1 strategy call a month"
+        ]
+      },
+      {
+        "name": "Full Partner",
+        "price": "$3,200",
+        "per": "/month",
+        "for": "For launches, events and real growth goals.",
+        "featured": false,
+        "items": [
+          "Strategy and industry research",
+          "1 shoot day",
+          "12 short-form videos",
+          "6 carousels or statics",
+          "Posting on Instagram, Facebook and TikTok",
+          "Monthly content calendar",
+          "Monthly performance report",
+          "2 strategy calls a month",
+          "Same-week trend videos",
+          "Launch and seasonal campaigns",
+          "Boost and paid guidance"
+        ]
+      }
+    ],
+    "pricesNote": "Prices are starting points. Every business is different, so we'll set the final scope together.",
+    "addonsTitle": "Add-ons",
+    "addons": [
+      {
+        "name": "Extra shoot day",
+        "price": "$450"
+      },
+      {
+        "name": "Extra video",
+        "price": "$300"
+      },
+      {
+        "name": "Social audit",
+        "price": "$500"
+      },
+      {
+        "name": "Launch or event package",
+        "price": "$1,200"
+      }
+    ],
+    "communityNote": "Comment and DM management available on request.",
+    "stepsTitle": "How it works",
+    "steps": [
+      {
+        "title": "Intro call",
+        "text": "We talk goals, audience and what makes your business worth choosing. I research your industry and competitors."
+      },
+      {
+        "title": "Plan and shoot",
+        "text": "I build the month's plan and hooks, then film everything in one shoot day on location."
+      },
+      {
+        "title": "Post and report",
+        "text": "Videos go out on schedule. You get a clear report on what worked and what's next."
+      }
+    ],
+    "why": {
+      "headline": "Strategy, on-camera content and results, from one person.",
+      "points": [
+        {
+          "title": "A strategist who plans for sales",
+          "text": "Every month starts with research on your industry and competitors, and a plan built around bookings, visits and sales, not just likes."
+        },
+        {
+          "title": "A creator who shows up on camera",
+          "text": "I script, host, film and edit, so you get finished videos ready to post, not raw footage and a to-do list."
+        },
+        {
+          "title": "A track record you can check",
+          "text": "200M+ views across brands I've managed, a 10% sales lift at Cabot's and EF videos that rank next to the homepage for traffic."
+        }
+      ]
+    }
+  },
+  "about": {
+    "headline": "Hi, I'm Greer.",
+    "photo": "media/greer-headshot.jpg",
+    "paragraphs": [
+      "I turn scrollers into customers. The brands I've managed have earned 200M+ views, sending people to book trips, walk through the door and buy what they saw online.",
+      "I've spent 6+ years in social media across travel, food and beverage, and lifestyle brands, from launching Harpoon Brewery's TikTok to managing content as Associate Social Media Manager at EF Go Ahead Tours. Outside EF, I run social for local businesses.",
+      "I'm a social media manager who is also comfortable on camera, so strategy, filming, editing and posting all live with one person. Off the clock, I'm usually exploring a new city or planning my next trip, which is probably why travel, hospitality and lifestyle are where I do my best work."
+    ],
+    "stats": [
+      {
+        "number": "6+",
+        "label": "years in social media"
+      },
+      {
+        "number": "200M+",
+        "label": "views across brands I've managed"
+      },
+      {
+        "number": "7M+",
+        "label": "engagements"
+      }
+    ],
+    "gallery": [
+      {
+        "img": "media/greer-pizza.jpg",
+        "alt": "Greer holding a slice of pizza"
+      },
+      {
+        "img": "media/greer-cliffs.jpg",
+        "alt": "Greer at the Cliffs of Moher"
+      },
+      {
+        "img": "media/greer-noodles.jpg",
+        "alt": "Greer eating noodles"
+      },
+      {
+        "img": "media/greer-waterfall.jpg",
+        "alt": "Greer at a waterfall in Iceland"
+      }
+    ]
+  },
+  "contact": {
+    "headline": "Let's talk.",
+    "intro": "Hiring for a social role? Or a business that wants to be the one everyone's sharing?",
+    "photo": "media/greer-dinner.jpg",
+    "hiring": {
+      "title": "Hiring managers",
+      "text": "I'm open to social media manager roles in travel, food and beverage, and lifestyle. Here's my background.",
+      "button": "View my LinkedIn"
+    },
+    "business": {
+      "title": "Businesses",
+      "text": "Tell me about your business and what you want social to do for you. I work with clients anywhere, remotely or on location, and I'll reply within two business days.",
+      "button": "Email me"
+    }
+  }
+}
