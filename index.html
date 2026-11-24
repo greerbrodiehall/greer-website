@@ -200,6 +200,21 @@ header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1.5px
 .mail{font-weight:600;font-size:17px;word-break:break-all}
 .socials{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:28px;font-weight:600}
 
+
+/* inquiry form */
+.form{border:2px solid var(--ink);border-radius:24px;padding:32px;background:#fff;margin-bottom:22px}
+.form h2{font-size:clamp(28px,3.4vw,40px);margin-bottom:8px}
+.fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 18px;margin-top:20px}
+.fgrid .full{grid-column:1/-1}
+.form label{display:block;font-weight:600;font-size:14px;margin-bottom:6px}
+.form input,.form select,.form textarea{width:100%;font:16px var(--b);color:var(--ink);background:var(--bg);border:1.5px solid var(--ink);border-radius:12px;padding:12px 14px;min-height:48px}
+.form textarea{min-height:130px;resize:vertical}
+.form .who{display:flex;flex-wrap:wrap;gap:10px}
+.form .who label{display:flex;align-items:center;gap:8px;font-weight:500;border:1.5px solid var(--ink);border-radius:99px;padding:10px 16px;margin:0;cursor:pointer;min-height:44px}
+.form .who input{width:auto;min-height:0;accent-color:var(--teal)}
+.form .hp{position:absolute;left:-9999px}
+.fmsg{margin-top:14px;font-weight:600}
+@media (max-width:600px){.fgrid{grid-template-columns:minmax(0,1fr)}.form{padding:22px}}
 /* cta + footer */
 .cta{text-align:center}
 .cta h2{font-size:clamp(40px,7vw,96px);letter-spacing:-.035em;margin-bottom:18px}
@@ -257,6 +272,9 @@ footer{background:var(--sky);color:var(--ink);border-top:1.5px solid var(--ink);
     </nav>
   </div>
 </header>
+<form name="inquiry" data-netlify="true" netlify-honeypot="bot-field" hidden>
+<input type="hidden" name="form-name" value="inquiry"><input name="bot-field"><input name="who"><input name="name"><input name="email"><input name="business"><input name="link"><input name="interest"><textarea name="message"></textarea>
+</form>
 <main id="app"><div class="loading">Loading…</div></main>
 <footer>
   <div class="wrap">
@@ -274,7 +292,7 @@ footer{background:var(--sky);color:var(--ink);border-top:1.5px solid var(--ink);
 {
 const app=document.getElementById('app');
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let C=null;
+let C=null, pickedPkg='';
 const colorClass={verdigris:'c-teal',jasmine:'c-jas',sandy:'c-sand',peach:'c-peach'};
 
 const phone=(v,cls='')=>`<figure class="phone ${cls}"><div class="frame"><video controls playsinline preload="none" poster="${esc(v.poster)}" src="${esc(v.src)}"></video></div>${v.caption?`<figcaption>${esc(v.caption)}</figcaption>`:''}</figure>`;
@@ -357,7 +375,7 @@ services(){
     <div class="tiers" style="margin-top:48px">${s.tiers.map(t=>`<div class="tier ${t.featured?'f':''}">${t.badge?`<span class="badge">${esc(t.badge)}</span>`:''}
       <h3>${esc(t.name)}</h3><span class="start">Starting at</span><div class="price">${esc(t.price)}<small>${esc(t.per)}</small></div>
       <p class="for">${esc(t.for)}</p><ul>${t.items.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
-      <a class="btn dark" href="#contact">Get started</a></div>`).join('')}</div>
+      <a class="btn dark" href="#contact" data-pkg="${esc(t.name)}">Get started</a></div>`).join('')}</div>
     <p style="margin-top:28px;text-align:center">${esc(s.pricesNote)}</p>
   </div></section>
   <section class="band c-white"><div class="wrap">
@@ -387,8 +405,26 @@ about(){
 },
 contact(){
   const c=C.contact,s=C.site;
+  const fm=c.form, opts=C.services.tiers.map(t=>t.name).concat(['Not sure yet','A full-time role']);
   return `${pageHero('Contact',c.intro,'c-teal')}
   <section class="band"><div class="wrap">
+    <form class="form" id="inquiry" name="inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <h2>${esc(fm.title)}</h2><p>${esc(fm.intro)}</p>
+      <input type="hidden" name="form-name" value="inquiry">
+      <p class="hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <div class="fgrid">
+        <fieldset class="full" style="border:0;padding:0;margin:0"><legend style="font-weight:600;font-size:14px;margin-bottom:8px">I'm reaching out as</legend>
+          <div class="who"><label><input type="radio" name="who" value="Business" checked> A business</label><label><input type="radio" name="who" value="Hiring manager"> A hiring manager</label><label><input type="radio" name="who" value="Other"> Something else</label></div></fieldset>
+        <div><label for="f-name">Your name</label><input id="f-name" name="name" required autocomplete="name"></div>
+        <div><label for="f-email">Email</label><input id="f-email" name="email" type="email" required autocomplete="email"></div>
+        <div><label for="f-biz">Business or company</label><input id="f-biz" name="business" autocomplete="organization"></div>
+        <div><label for="f-link">Website or Instagram</label><input id="f-link" name="link" placeholder="@yourbusiness"></div>
+        <div class="full"><label for="f-int">What are you interested in?</label><select id="f-int" name="interest">${opts.map(o=>`<option${o===pickedPkg?' selected':''}>${esc(o)}</option>`).join('')}</select></div>
+        <div class="full"><label for="f-msg">Tell me about your goals</label><textarea id="f-msg" name="message" required></textarea></div>
+      </div>
+      <div class="btns" style="margin-top:20px"><button class="btn peach" type="submit">Send inquiry</button></div>
+      <p class="fmsg" id="fmsg" role="status"></p>
+    </form>
     <div class="contact">
       <div class="box"><h2>${esc(c.business.title)}</h2><p>${esc(c.business.text)}</p><p class="mail">${esc(s.email)}</p>
         <div class="btns"><a class="btn peach" href="mailto:${esc(s.email)}">${esc(c.business.button)}</a><button class="btn ghost" id="copymail" type="button">Copy email</button></div></div>
@@ -415,6 +451,15 @@ function route(){
   links.classList.remove('open');menu.setAttribute('aria-expanded','false');
   document.title=(cs?cs.brand+' | ':active!=='home'?active[0].toUpperCase()+active.slice(1)+' | ':'')+C.site.name+', '+C.site.title;
   window.scrollTo(0,0);
+  app.querySelectorAll('[data-pkg]').forEach(a=>a.addEventListener('click',()=>{pickedPkg=a.dataset.pkg}));
+  const fe=document.getElementById('inquiry');
+  if(fe)fe.addEventListener('submit',async e=>{
+    e.preventDefault();const msg=document.getElementById('fmsg'),btn=fe.querySelector('button[type=submit]');
+    btn.disabled=true;msg.textContent='Sending…';
+    try{const r=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(fe)).toString()});
+      if(!r.ok)throw 0;fe.reset();msg.textContent=C.contact.form.success;pickedPkg='';}
+    catch(err){msg.textContent='Something went wrong. Please email me at '+C.site.email+'.';}
+    btn.disabled=false;});
   const cm=document.getElementById('copymail');
   if(cm)cm.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(C.site.email);cm.textContent='Copied'}catch(e){cm.textContent=C.site.email}});
   // only one video plays at a time

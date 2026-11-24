@@ -557,6 +557,11 @@
       "title": "Businesses",
       "text": "Tell me about your business and what you want social to do for you. I work with clients anywhere, remotely or on location, and I'll reply within two business days.",
       "button": "Email me"
+    },
+    "form": {
+      "title": "Work with me",
+      "intro": "Fill this out and it comes straight to my inbox. I'll reply within two business days.",
+      "success": "Thank you! Your message is in my inbox and I'll be in touch within two business days."
     }
   }
 }
