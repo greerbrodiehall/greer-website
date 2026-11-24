@@ -1,0 +1,223 @@
+media:
+  input: media
+  output: media
+
+content:
+  - name: website
+    label: Website content
+    type: file
+    path: content.json
+    fields:
+      - name: site
+        label: Site settings
+        type: object
+        fields:
+          - { name: name, label: Name, type: string }
+          - { name: title, label: Title, type: string }
+          - { name: announcement, label: Top bar message, type: string }
+          - { name: email, label: Email, type: string }
+          - { name: linkedin, label: LinkedIn URL, type: string }
+          - { name: instagram, label: Instagram URL, type: string }
+          - { name: instagramHandle, label: Instagram handle, type: string }
+          - { name: tiktok, label: TikTok URL, type: string }
+          - { name: tiktokHandle, label: TikTok handle, type: string }
+
+      - name: home
+        label: Home page
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - { name: headline, label: Hook, type: string }
+          - { name: intro, label: Intro, type: text }
+          - { name: photo, label: Hero photo, type: image }
+          - { name: photoCaption, label: Photo caption, type: string }
+          - name: heroStats
+            label: Hero stats
+            type: object
+            list: true
+            fields:
+              - { name: number, label: Number, type: string }
+              - { name: label, label: Label, type: string }
+          - { name: resultsTitle, label: Results band title, type: string }
+          - name: results
+            label: Results band
+            type: object
+            list: true
+            fields:
+              - { name: number, label: Number, type: string }
+              - { name: label, label: Label, type: string }
+              - { name: source, label: Source, type: string }
+          - { name: brandsTitle, label: Brands title, type: string }
+          - { name: brands, label: Brands, type: string, list: true }
+          - { name: featuredTitle, label: Featured work title, type: string }
+          - { name: featured, label: Featured case study ids, type: string, list: true }
+          - { name: servicesTeaser, label: Services teaser, type: text }
+
+      - name: caseStudies
+        label: Case studies
+        type: object
+        list: true
+        fields:
+          - { name: id, label: Page id (no spaces), type: string }
+          - { name: brand, label: Brand, type: string }
+          - { name: role, label: Role and dates, type: string }
+          - { name: kicker, label: Kicker, type: string }
+          - { name: headline, label: Headline, type: string }
+          - { name: card, label: Card blurb, type: text }
+          - { name: color, label: Header color (verdigris, jasmine, sandy or peach), type: string }
+          - { name: summary, label: Summary, type: text }
+          - name: results
+            label: Results
+            type: object
+            list: true
+            fields:
+              - { name: number, label: Number, type: string }
+              - { name: text, label: Text, type: text }
+          - name: video
+            label: Main video
+            type: object
+            fields:
+              - { name: src, label: Video file, type: file }
+              - { name: poster, label: Cover image, type: image }
+              - { name: caption, label: Caption, type: string }
+          - { name: extraTitle, label: More videos title, type: string }
+          - { name: extraNote, label: Extra note, type: text }
+          - name: extraLink
+            label: Extra link
+            type: object
+            fields:
+              - { name: label, label: Link text, type: string }
+              - { name: url, label: URL, type: string }
+          - name: more
+            label: More videos (keep to 4 or 8)
+            type: object
+            list: true
+            fields:
+              - { name: src, label: Video file, type: file }
+              - { name: poster, label: Cover image, type: image }
+              - { name: caption, label: Caption, type: string }
+
+      - name: statics
+        label: Carousels and statics
+        type: object
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: intro, label: Intro, type: string }
+          - name: items
+            label: Posts
+            type: object
+            list: true
+            fields:
+              - { name: img, label: Image, type: image }
+              - { name: title, label: Title, type: string }
+              - { name: result, label: Result, type: string }
+              - { name: text, label: Description, type: string }
+
+      - name: brandVideos
+        label: Brand and lifestyle videos
+        type: object
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: intro, label: Intro, type: string }
+          - name: items
+            label: Videos (keep to 4 or 8)
+            type: object
+            list: true
+            fields:
+              - { name: src, label: Video file, type: file }
+              - { name: poster, label: Cover image, type: image }
+              - { name: caption, label: Caption, type: string }
+
+      - name: services
+        label: Services page
+        type: object
+        fields:
+          - { name: headline, label: Headline, type: string }
+          - { name: intro, label: Intro, type: text }
+          - { name: allInclude, label: Every package includes, type: string, list: true }
+          - name: tiers
+            label: Packages
+            type: object
+            list: true
+            fields:
+              - { name: name, label: Name, type: string }
+              - { name: price, label: Price, type: string }
+              - { name: per, label: Per, type: string }
+              - { name: for, label: Who it's for, type: string }
+              - { name: featured, label: Highlight this package, type: boolean }
+              - { name: badge, label: Badge, type: string }
+              - { name: items, label: What's included, type: string, list: true }
+          - { name: pricesNote, label: Prices note, type: string }
+          - { name: addonsTitle, label: Add-ons title, type: string }
+          - name: addons
+            label: Add-ons
+            type: object
+            list: true
+            fields:
+              - { name: name, label: Name, type: string }
+              - { name: price, label: Price, type: string }
+          - { name: communityNote, label: Community note, type: string }
+          - { name: stepsTitle, label: Steps title, type: string }
+          - name: steps
+            label: How it works
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Title, type: string }
+              - { name: text, label: Text, type: text }
+          - name: why
+            label: Why hire me
+            type: object
+            fields:
+              - { name: headline, label: Headline, type: string }
+              - name: points
+                label: Points
+                type: object
+                list: true
+                fields:
+                  - { name: title, label: Title, type: string }
+                  - { name: text, label: Text, type: text }
+
+      - name: about
+        label: About page
+        type: object
+        fields:
+          - { name: headline, label: Headline, type: string }
+          - { name: photo, label: Photo, type: image }
+          - { name: paragraphs, label: Paragraphs, type: text, list: true }
+          - name: stats
+            label: Stats
+            type: object
+            list: true
+            fields:
+              - { name: number, label: Number, type: string }
+              - { name: label, label: Label, type: string }
+          - name: gallery
+            label: Photo gallery (keep to 4)
+            type: object
+            list: true
+            fields:
+              - { name: img, label: Photo, type: image }
+              - { name: alt, label: Description, type: string }
+
+      - name: contact
+        label: Contact page
+        type: object
+        fields:
+          - { name: headline, label: Headline, type: string }
+          - { name: intro, label: Intro, type: text }
+          - { name: photo, label: Photo, type: image }
+          - name: hiring
+            label: Hiring managers box
+            type: object
+            fields:
+              - { name: title, label: Title, type: string }
+              - { name: text, label: Text, type: text }
+              - { name: button, label: Button, type: string }
+          - name: business
+            label: Businesses box
+            type: object
+            fields:
+              - { name: title, label: Title, type: string }
+              - { name: text, label: Text, type: text }
+              - { name: button, label: Button, type: string }
