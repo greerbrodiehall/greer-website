@@ -34,12 +34,12 @@
     "results": [
       {
         "number": "+8,352%",
-        "label": "website visits in one month from one video",
+        "label": "organic social media website visits in one month from one video",
         "source": "Switzerland by Train, EF Go Ahead Tours"
       },
       {
         "number": "55K+",
-        "label": "website visits from my videos",
+        "label": "website visits from organic content",
         "source": "EF Go Ahead Tours, since June 2024"
       },
       {
@@ -86,7 +86,7 @@
         },
         {
           "number": "23.1%",
-          "text": "of organic social leads (about 1 in 4) and 12.6% of bookings (1 in 8) started with my content"
+          "text": "of organic social leads (approx 1 in 4) and 12.6% of bookings (1 in 8) started with my content"
         },
         {
           "number": "+897%",
@@ -96,7 +96,7 @@
       "video": {
         "src": "media/ef-usa.mp4",
         "poster": "media/ef-usa.jpg",
-        "caption": "5 places most people miss in the USA: #8 traffic source of 6,500+, 720K views, 7.7% visit-to-lead rate"
+        "caption": "5 places most people miss in the USA: #8 traffic source of the year, 720K views, 7.7% visit-to-lead rate"
       },
       "extraTitle": "More from EF Go Ahead Tours",
       "extraNote": "Also: one Switzerland by Train itinerary video drove +8,352% website visits in a month and helped make the case for new train tours. My top Reel, Tokyo matcha, reached 22.2M views.",
@@ -159,11 +159,11 @@
       "results": [
         {
           "number": "+10%",
-          "text": "sales, June to October 2026 vs. the same months in 2025, with about 7% more guests"
+          "text": "sales, June to October 2026 vs. the same months in 2025, with 7% more guests"
         },
         {
           "number": "0 to 58.4K",
-          "text": "TikTok followers, and about 143K new followers across Instagram, Facebook and TikTok"
+          "text": "TikTok followers, and 143K new followers across Instagram, Facebook and TikTok"
         },
         {
           "number": "14.8M",
@@ -229,7 +229,6 @@
         "caption": "Send this to the person who owes you pancakes: 669K views, 34.7K shares"
       },
       "extraTitle": "More from Johnny's",
-      "extraNote": "",
       "more": [
         {
           "src": "media/johnnys-2.mp4",
@@ -239,17 +238,17 @@
         {
           "src": "media/johnnys-sandwich.mp4",
           "poster": "media/johnnys-sandwich.jpg",
-          "caption": "Small business shoutout"
+          "caption": "Larry David fan? This is your sandwich"
         },
         {
           "src": "media/johnnys-1.mp4",
           "poster": "media/johnnys-1.jpg",
-          "caption": "Meet Johnny's"
+          "caption": "Small Business Shoutout"
         },
         {
           "src": "media/johnnys-4.mp4",
           "poster": "media/johnnys-4.jpg",
-          "caption": "Fresh off the griddle"
+          "caption": "Pancake Special"
         }
       ]
     },
@@ -278,7 +277,6 @@
         "caption": "New England things that would send West Coast people into a coma"
       },
       "extraTitle": "More from Harpoon",
-      "extraNote": "",
       "more": [
         {
           "src": "media/harpoon-coworkers.mp4",
@@ -293,7 +291,7 @@
         {
           "src": "media/harpoon-brewery.mp4",
           "poster": "media/harpoon-brewery.jpg",
-          "caption": "Behind the scenes at the brewery"
+          "caption": "Taylor Swifit music video with brewers"
         }
       ]
     },
@@ -302,14 +300,14 @@
       "brand": "Table Mercato",
       "role": "On my own page, unpaid",
       "kicker": "On my own page: Table Mercato",
-      "headline": "One honest sandwich review, double the bread sales",
-      "card": "A post on my own page doubled a North End shop's bread sales in two weeks.",
+      "headline": "One honest sandwich review, double the sandwich sales",
+      "card": "A post on my own TikTok food page doubled a North End shop's sandwich sales in two weeks. This created a snowball effect which led to them winning Boston's Best Sandwich and opening a store in NYC.",
       "color": "verdigris",
       "summary": "This wasn't client work. I posted an honest review of a North End sandwich shop on my own page in my free time, and it showed what one specific, genuine recommendation can do for a small business.",
       "results": [
         {
           "number": "+100%",
-          "text": "bread sales in the two weeks after the post"
+          "text": "sandwich sales in the two weeks after the post"
         },
         {
           "number": "563K",
@@ -324,10 +322,7 @@
         "src": "media/tablemercato.mp4",
         "poster": "media/tablemercato.jpg",
         "caption": "The Table Mercato review"
-      },
-      "extraTitle": "",
-      "extraNote": "",
-      "more": []
+      }
     }
   ],
   "statics": {
@@ -557,11 +552,6 @@
       "title": "Businesses",
       "text": "Tell me about your business and what you want social to do for you. I work with clients anywhere, remotely or on location, and I'll reply within two business days.",
       "button": "Email me"
-    },
-    "form": {
-      "title": "Work with me",
-      "intro": "Fill this out and it comes straight to my inbox. I'll reply within two business days.",
-      "success": "Thank you! Your message is in my inbox and I'll be in touch within two business days."
     }
   }
 }
