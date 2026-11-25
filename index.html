@@ -314,111 +314,120 @@ const pageHero=(word,tag,cls)=>`<section class="phero ${cls}"><div class="wrap">
 const cta=(cls='c-lime')=>`<section class="band cta ${cls}"><div class="wrap"><h2>${esc(C.contact.headline)}</h2><p>${esc(C.contact.intro)}</p><div class="btns"><a class="btn peach" href="#contact">Work with me</a><a class="btn ghost" href="#services">See services</a></div></div></section>`;
 const card=s=>`<a class="card" href="#${esc(s.id)}"><div class="thumb ${colorClass[s.color]||''}"><img src="${esc(s.video.poster)}" alt="" loading="lazy"></div><div class="body"><small>${esc(s.brand)}</small><h3>${esc(s.headline)}</h3><p>${esc(s.card)}</p><span class="go">See the case study</span></div></a>`;
 
+// Safety net: each section renders on its own, so missing wording only hides that section.
+const S=(...fns)=>fns.map(f=>{try{return f()}catch(e){console.warn('Section skipped:',e);return ''}}).join('');
+const L=a=>Array.isArray(a)?a:[];
 const views={
 home(){
-  const h=C.home;
-  const feat=h.featured.map(id=>C.caseStudies.find(s=>s.id===id)).filter(Boolean);
-  return `
-  <section class="wrap hero">
+  const h=C.home||{};
+  return S(
+  ()=>`<section class="wrap hero">
     <div>
       <div class="htop"><h1>Social media <em>manager.</em></h1><figure class="mini"><img src="${esc(h.mobilePhoto||'media/greer-headshot.jpg')}" alt="Greer Brodie-Hall"></figure></div>
       <p class="hook">${esc(h.headline)}</p>
       <p class="intro">${esc(h.intro)}</p>
       <div class="btns"><a class="btn peach" href="#contact">Hire me</a><a class="btn dark" href="#work">See my work</a><a class="btn ghost" href="${esc(C.site.linkedin)}" target="_blank" rel="noopener">Resume / LinkedIn</a></div>
-      <div class="hstats">${h.heroStats.map(s=>`<div><b>${esc(s.number)}</b><span>${esc(s.label)}</span></div>`).join('')}</div>
+      <div class="hstats">${L(h.heroStats).map(s=>`<div><b>${esc(s.number)}</b><span>${esc(s.label)}</span></div>`).join('')}</div>
     </div>
     <figure class="print bigphoto" style="margin:0"><img src="${esc(h.photo)}" alt="Greer filming at Cabot's Ice Cream"><figcaption>${esc(h.photoCaption)}</figcaption></figure>
-  </section>
-  <section class="band results c-sand"><div class="wrap">
+  </section>`,
+  ()=>`<section class="band results c-sand"><div class="wrap">
     <h2>${esc(h.resultsTitle)}</h2>
-    <div class="rgrid">${h.results.map(r=>`<div><b>${esc(r.number)}</b><p>${esc(r.label)}</p><i>${esc(r.source)}</i></div>`).join('')}</div>
-  </div></section>
-  <section class="c-teal"><div class="wrap brands"><small>${esc(h.brandsTitle)}</small>${h.brands.map(b=>`<span>${esc(b)}</span>`).join('')}</div></section>
-  <section class="band"><div class="wrap">
+    <div class="rgrid">${L(h.results).map(r=>`<div><b>${esc(r.number)}</b><p>${esc(r.label)}</p><i>${esc(r.source)}</i></div>`).join('')}</div>
+  </div></section>`,
+  ()=>`<section class="c-teal"><div class="wrap brands"><small>${esc(h.brandsTitle)}</small>${L(h.brands).map(b=>`<span>${esc(b)}</span>`).join('')}</div></section>`,
+  ()=>{const feat=L(h.featured).map(id=>L(C.caseStudies).find(s=>s.id===id)).filter(Boolean);return `<section class="band"><div class="wrap">
     <div class="sec-h"><h2>${esc(h.featuredTitle)}</h2><a class="btn dark" href="#work">All work</a></div>
     <div class="cards">${feat.map(card).join('')}</div>
-  </div></section>
-  <section class="band c-jas"><div class="wrap">
+  </div></section>`},
+  ()=>`<section class="band c-jas"><div class="wrap">
     <div class="sec-h" style="margin:0"><div><h2>Services</h2><p style="font-size:18px;max-width:620px;margin-top:14px">${esc(h.servicesTeaser)}</p></div><a class="btn dark" href="#services">See packages</a></div>
-  </div></section>
-  ${cta()}`;
+  </div></section>`,
+  ()=>cta());
 },
 work(){
-  const st=C.statics, bv=C.brandVideos;
-  return `${pageHero('Work','Results that speak for themselves. Tap any project to see the full story.','c-jas')}
-  <section class="band"><div class="wrap">
+  const st=C.statics||{}, bv=C.brandVideos||{};
+  return S(
+  ()=>pageHero('Work','Results that speak for themselves. Tap any project to see the full story.','c-jas'),
+  ()=>`<section class="band"><div class="wrap">
     <div class="sec-h"><h2>Case studies</h2></div>
-    <div class="cards">${C.caseStudies.map(card).join('')}</div>
-  </div></section>
-  <section class="band c-white"><div class="wrap">
+    <div class="cards">${L(C.caseStudies).map(s=>S(()=>card(s))).join('')}</div>
+  </div></section>`,
+  ()=>`<section class="band c-white"><div class="wrap">
     <div class="sec-h"><div><h2>${esc(st.title)}</h2><p style="margin-top:12px">${esc(st.intro)}</p></div></div>
-    <div class="statics">${st.items.map(i=>`<div class="static"><img src="${esc(i.img)}" alt="${esc(i.title)}" loading="lazy"><h3>${esc(i.title)}</h3><b>${esc(i.result)}</b><p>${esc(i.text)}</p></div>`).join('')}</div>
-  </div></section>
-  <section class="band"><div class="wrap">
+    <div class="statics">${L(st.items).map(i=>`<div class="static"><img src="${esc(i.img)}" alt="${esc(i.title)}" loading="lazy"><h3>${esc(i.title)}</h3><b>${esc(i.result)}</b><p>${esc(i.text)}</p></div>`).join('')}</div>
+  </div></section>`,
+  ()=>`<section class="band"><div class="wrap">
     <div class="sec-h"><div><h2>${esc(bv.title)}</h2><p style="margin-top:12px">${esc(bv.intro)}</p></div></div>
-    ${reel(bv.items)}
-  </div></section>
-  ${cta()}`;
+    ${reel(L(bv.items))}
+  </div></section>`,
+  ()=>cta());
 },
 caseStudy(s){
-  const i=C.caseStudies.indexOf(s), prev=C.caseStudies[(i-1+C.caseStudies.length)%C.caseStudies.length], next=C.caseStudies[(i+1)%C.caseStudies.length];
-  return `<section class="phero cs-hero ${colorClass[s.color]||'c-jas'}"><div class="wrap">
+  const all=L(C.caseStudies), i=all.indexOf(s), prev=all[(i-1+all.length)%all.length], next=all[(i+1)%all.length];
+  return S(
+  ()=>`<section class="phero cs-hero ${colorClass[s.color]||'c-jas'}"><div class="wrap">
     <span class="kick">${esc(s.kicker)}</span><h1>${esc(s.headline)}</h1><p class="meta">${esc(s.role)}</p>
-  </div></section>
-  <section class="band"><div class="wrap cs">
+  </div></section>`,
+  ()=>`<section class="band"><div class="wrap cs">
     <div>
       <p class="summary">${esc(s.summary)}</p>
-      <ol class="rlist">${s.results.map(r=>`<li><b>${esc(r.number)}</b><span>${esc(r.text)}</span></li>`).join('')}</ol>
-      ${s.extraNote?`<div class="note">${esc(s.extraNote)}${s.extraLink?` <a href="${esc(s.extraLink.url)}" target="_blank" rel="noopener"><b>${esc(s.extraLink.label)}</b></a>`:''}</div>`:''}
+      <ol class="rlist">${L(s.results).map(r=>`<li><b>${esc(r.number)}</b><span>${esc(r.text)}</span></li>`).join('')}</ol>
+      ${s.extraNote?`<div class="note">${esc(s.extraNote)}${s.extraLink&&s.extraLink.url?` <a href="${esc(s.extraLink.url)}" target="_blank" rel="noopener"><b>${esc(s.extraLink.label)}</b></a>`:''}</div>`:''}
       <div class="btns" style="margin-top:28px"><a class="btn peach" href="#contact">Get results like this</a><a class="btn ghost" href="#work">Back to all work</a></div>
     </div>
-    ${phone(s.video)}
-  </div></section>
-  ${s.more&&s.more.length?`<section class="band c-white"><div class="wrap"><div class="sec-h"><h2>${esc(s.extraTitle||'More videos')}</h2></div>${reel(s.more)}</div></section>`:''}
-  <section class="band" style="padding-top:40px"><div class="wrap pager"><a href="#${esc(prev.id)}">← ${esc(prev.brand)}</a><a href="#${esc(next.id)}">${esc(next.brand)} →</a></div></section>
-  ${cta()}`;
+    ${S(()=>phone(s.video))}
+  </div></section>`,
+  ()=>L(s.more).length?`<section class="band c-white"><div class="wrap"><div class="sec-h"><h2>${esc(s.extraTitle||'More videos')}</h2></div>${reel(L(s.more))}</div></section>`:'',
+  ()=>`<section class="band" style="padding-top:40px"><div class="wrap pager"><a href="#${esc(prev.id)}">← ${esc(prev.brand)}</a><a href="#${esc(next.id)}">${esc(next.brand)} →</a></div></section>`,
+  ()=>cta());
 },
 services(){
-  const s=C.services;
-  return `${pageHero('Services',s.intro,'c-lime')}
-  <section class="band"><div class="wrap">
-    <div class="sec-h" style="display:block"><h2>${esc(s.headline)}</h2><p style="margin-top:14px;font-size:18px">Every package includes:</p><div class="chips">${s.allInclude.map(x=>`<span>${esc(x)}</span>`).join('')}</div></div>
-    <div class="tiers" style="margin-top:48px">${s.tiers.map(t=>`<div class="tier ${t.featured?'f':''}">${t.badge?`<span class="badge">${esc(t.badge)}</span>`:''}
+  const s=C.services||{};
+  return S(
+  ()=>pageHero('Services',s.intro,'c-lime'),
+  ()=>`<section class="band"><div class="wrap">
+    <div class="sec-h" style="display:block"><h2>${esc(s.headline)}</h2><p style="margin-top:14px;font-size:18px">Every package includes:</p><div class="chips">${L(s.allInclude).map(x=>`<span>${esc(x)}</span>`).join('')}</div></div>
+    <div class="tiers" style="margin-top:48px">${L(s.tiers).map(t=>`<div class="tier ${t.featured?'f':''}">${t.badge?`<span class="badge">${esc(t.badge)}</span>`:''}
       <h3>${esc(t.name)}</h3><span class="start">Starting at</span><div class="price">${esc(t.price)}<small>${esc(t.per)}</small></div>
-      <p class="for">${esc(t.for)}</p><ul>${t.items.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+      <p class="for">${esc(t.for)}</p><ul>${L(t.items).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
       <a class="btn dark" href="#contact" data-pkg="${esc(t.name)}">Get started</a></div>`).join('')}</div>
     <p style="margin-top:28px;text-align:center">${esc(s.pricesNote)}</p>
-  </div></section>
-  <section class="band c-white"><div class="wrap">
+  </div></section>`,
+  ()=>`<section class="band c-white"><div class="wrap">
     <div class="sec-h"><h2>${esc(s.addonsTitle)}</h2></div>
-    <div class="addons">${s.addons.map(a=>`<div class="addon"><b>${esc(a.price)}</b>${esc(a.name)}</div>`).join('')}</div>
+    <div class="addons">${L(s.addons).map(a=>`<div class="addon"><b>${esc(a.price)}</b>${esc(a.name)}</div>`).join('')}</div>
     <p style="margin-top:20px">${esc(s.communityNote)}</p>
-  </div></section>
-  <section class="band"><div class="wrap">
+  </div></section>`,
+  ()=>`<section class="band"><div class="wrap">
     <div class="sec-h"><h2>${esc(s.stepsTitle)}</h2></div>
-    <div class="steps">${s.steps.map(x=>`<div class="step"><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p></div>`).join('')}</div>
-  </div></section>
-  <section class="band c-teal why"><div class="wrap"><h2>${esc(s.why.headline)}</h2><div class="whys">${s.why.points.map(p=>`<div class="whyc"><h3>${esc(p.title)}</h3><p>${esc(p.text)}</p></div>`).join('')}</div></div></section>
-  ${cta()}`;
+    <div class="steps">${L(s.steps).map(x=>`<div class="step"><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p></div>`).join('')}</div>
+  </div></section>`,
+  ()=>`<section class="band c-teal why"><div class="wrap"><h2>${esc(s.why.headline)}</h2><div class="whys">${L(s.why.points).map(p=>`<div class="whyc"><h3>${esc(p.title)}</h3><p>${esc(p.text)}</p></div>`).join('')}</div></div></section>`,
+  ()=>cta());
 },
 about(){
-  const a=C.about;
-  return `${pageHero('About','Social media manager, on-camera creator and the person happy to do take twelve.','c-sand')}
-  <section class="band"><div class="wrap about">
+  const a=C.about||{};
+  return S(
+  ()=>pageHero('About','Social media manager, on-camera creator and the person happy to do take twelve.','c-sand'),
+  ()=>`<section class="band"><div class="wrap about">
     <figure class="print l" style="margin:0"><img src="${esc(a.photo)}" alt="Greer Brodie-Hall"></figure>
-    <div><h2 style="font-size:clamp(36px,5vw,64px);margin-bottom:24px">${esc(a.headline)}</h2>${a.paragraphs.map(p=>`<p>${esc(p)}</p>`).join('')}
-      <div class="hstats">${a.stats.map(s=>`<div><b>${esc(s.number)}</b><span>${esc(s.label)}</span></div>`).join('')}</div>
+    <div><h2 style="font-size:clamp(36px,5vw,64px);margin-bottom:24px">${esc(a.headline)}</h2>${L(a.paragraphs).map(p=>`<p>${esc(p)}</p>`).join('')}
+      <div class="hstats">${L(a.stats).map(s=>`<div><b>${esc(s.number)}</b><span>${esc(s.label)}</span></div>`).join('')}</div>
       <div class="btns" style="margin-top:28px"><a class="btn peach" href="#contact">Work with me</a><a class="btn dark" href="#work">See my work</a></div>
     </div>
-  </div></section>
-  <section class="band c-jas"><div class="wrap"><div class="gallery">${a.gallery.map(g=>`<figure class="print" style="margin:0"><img src="${esc(g.img)}" alt="${esc(g.alt)}" loading="lazy"></figure>`).join('')}</div></div></section>
-  ${cta()}`;
+  </div></section>`,
+  ()=>`<section class="band c-jas"><div class="wrap"><div class="gallery">${L(a.gallery).map(g=>`<figure class="print" style="margin:0"><img src="${esc(g.img)}" alt="${esc(g.alt)}" loading="lazy"></figure>`).join('')}</div></div></section>`,
+  ()=>cta());
 },
 contact(){
-  const c=C.contact,s=C.site;
-  const fm=c.form, opts=C.services.tiers.map(t=>t.name).concat(['Not sure yet','A full-time role']);
-  return `${pageHero('Contact',c.intro,'c-teal')}
-  <section class="band"><div class="wrap">
+  const c=C.contact||{},s=C.site||{};
+  const fm=c.form||{title:'Work with me',intro:"Fill this out and it comes straight to my inbox.",success:"Thank you! I'll be in touch soon."};
+  const opts=L((C.services||{}).tiers).map(t=>t.name).concat(['Not sure yet','A full-time role']);
+  const bz=c.business||{}, hr=c.hiring||{};
+  return S(
+  ()=>pageHero('Contact',c.intro,'c-teal'),
+  ()=>`<section class="band"><div class="wrap">
     <form class="form" id="inquiry" name="inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
       <h2>${esc(fm.title)}</h2><p>${esc(fm.intro)}</p>
       <input type="hidden" name="form-name" value="inquiry">
@@ -436,15 +445,15 @@ contact(){
       <div class="btns" style="margin-top:20px"><button class="btn peach" type="submit">Send inquiry</button></div>
       <p class="fmsg" id="fmsg" role="status"></p>
     </form>
-    <div class="contact">
-      <div class="box"><h2>${esc(c.business.title)}</h2><p>${esc(c.business.text)}</p><p class="mail">${esc(s.email)}</p>
-        <div class="btns"><a class="btn peach" href="mailto:${esc(s.email)}">${esc(c.business.button)}</a><button class="btn ghost" id="copymail" type="button">Copy email</button></div></div>
-      <div class="box"><h2>${esc(c.hiring.title)}</h2><p>${esc(c.hiring.text)}</p>
-        <div class="btns"><a class="btn dark" href="${esc(s.linkedin)}" target="_blank" rel="noopener">${esc(c.hiring.button)}</a><a class="btn ghost" href="#work">See my work</a></div></div>
-    </div>
+    ${S(()=>`<div class="contact">
+      <div class="box"><h2>${esc(bz.title)}</h2><p>${esc(bz.text)}</p><p class="mail">${esc(s.email)}</p>
+        <div class="btns"><a class="btn peach" href="mailto:${esc(s.email)}">${esc(bz.button||'Email me')}</a><button class="btn ghost" id="copymail" type="button">Copy email</button></div></div>
+      <div class="box"><h2>${esc(hr.title)}</h2><p>${esc(hr.text)}</p>
+        <div class="btns"><a class="btn dark" href="${esc(s.linkedin)}" target="_blank" rel="noopener">${esc(hr.button||'View my LinkedIn')}</a><a class="btn ghost" href="#work">See my work</a></div></div>
+    </div>`)}
     <div class="socials"><a href="${esc(s.instagram)}" target="_blank" rel="noopener">Instagram ${esc(s.instagramHandle)}</a><a href="${esc(s.tiktok)}" target="_blank" rel="noopener">TikTok ${esc(s.tiktokHandle)}</a><a href="${esc(s.linkedin)}" target="_blank" rel="noopener">LinkedIn</a></div>
-  </div></section>
-  <section class="band c-jas"><div class="wrap" style="max-width:520px"><figure class="print" style="margin:0"><img src="${esc(c.photo)}" alt="Greer at dinner" loading="lazy"></figure></div></section>`;
+  </div></section>`,
+  ()=>c.photo?`<section class="band c-jas"><div class="wrap" style="max-width:520px"><figure class="print" style="margin:0"><img src="${esc(c.photo)}" alt="Greer at dinner" loading="lazy"></figure></div></section>`:'');
 }
 };
 
@@ -454,8 +463,8 @@ menu.addEventListener('click',()=>{const o=links.classList.toggle('open');menu.s
 function route(){
   if(!C)return;
   const id=(location.hash||'#home').slice(1)||'home';
-  const cs=C.caseStudies.find(s=>s.id===id);
-  const html=cs?views.caseStudy(cs):(views[id]||views.home)();
+  const cs=(C.caseStudies||[]).find(s=>s.id===id);
+  let html='';try{html=cs?views.caseStudy(cs):(views[id]||views.home)()}catch(e){console.warn(e);html='<div class="loading">This page is being updated. Please check back soon.</div>'}
   app.innerHTML=`<div class="view">${html}</div>`;
   const active=cs?'work':(views[id]?id:'home');
   document.querySelectorAll('#links a').forEach(a=>a.classList.toggle('on',a.dataset.p===active));
@@ -468,7 +477,7 @@ function route(){
     e.preventDefault();const msg=document.getElementById('fmsg'),btn=fe.querySelector('button[type=submit]');
     btn.disabled=true;msg.textContent='Sending…';
     try{const r=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(fe)).toString()});
-      if(!r.ok)throw 0;fe.reset();msg.textContent=C.contact.form.success;pickedPkg='';}
+      if(!r.ok)throw 0;fe.reset();msg.textContent=((C.contact||{}).form||{}).success||'Thank you! Your message was sent.';pickedPkg='';}
     catch(err){msg.textContent='Something went wrong. Please email me at '+C.site.email+'.';}
     btn.disabled=false;});
   const cm=document.getElementById('copymail');
@@ -480,7 +489,7 @@ window.addEventListener('hashchange',route);
 
 fetch('content.json').then(r=>r.json()).then(data=>{
   C=data;
-  document.getElementById('announce').textContent=C.site.announcement;
+  C.site=C.site||{};document.getElementById('announce').textContent=C.site.announcement||'';
   document.getElementById('footsoc').innerHTML=`<a href="mailto:${esc(C.site.email)}">${esc(C.site.email)}</a><br><a href="${esc(C.site.instagram)}" target="_blank" rel="noopener">Instagram</a> · <a href="${esc(C.site.tiktok)}" target="_blank" rel="noopener">TikTok</a> · <a href="${esc(C.site.linkedin)}" target="_blank" rel="noopener">LinkedIn</a>`;
   document.getElementById('copy').textContent='© '+new Date().getFullYear()+' '+C.site.name+'.';
   route();
